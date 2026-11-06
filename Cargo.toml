@@ -1,0 +1,31 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/obd-core",
+    "crates/obd-elm327",
+    "crates/obd-cli",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+authors = ["Kerry Hatcher"]
+repository = "https://github.com/kerryhatcher/bigblue"
+rust-version = "1.85"
+
+[workspace.dependencies]
+obd-core = { path = "crates/obd-core" }
+obd-elm327 = { path = "crates/obd-elm327" }
+
+clap = { version = "4", features = ["derive", "env"] }
+# Default features pull in libudev, which needs system headers. Disabling
+# them still enumerates ports via sysfs on Linux and works everywhere else.
+serialport = { version = "4", default-features = false }
+thiserror = "2"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }

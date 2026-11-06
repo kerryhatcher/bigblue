@@ -1,0 +1,21 @@
+[package]
+name = "obd-cli"
+description = "Command-line tool for reading OBD-II data from a Ford F-150 over an ELM327 adapter"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "obd"
+path = "src/main.rs"
+
+[dependencies]
+clap.workspace = true
+obd-core.workspace = true
+obd-elm327.workspace = true
+
+[lints]
+workspace = true

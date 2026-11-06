@@ -1,0 +1,16 @@
+[package]
+name = "obd-elm327"
+description = "ELM327-compatible serial adapter backend (e.g. OHP FORScan USB adapter)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+obd-core.workspace = true
+serialport.workspace = true
+
+[lints]
+workspace = true
